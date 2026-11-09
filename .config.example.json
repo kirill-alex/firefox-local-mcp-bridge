@@ -1,0 +1,5 @@
+{
+  "port": 17893,
+  "token": "GENERATED_LOCALLY_BY_SETUP_DO_NOT_COMMIT",
+  "bidiEndpoint": "ws://127.0.0.1:9222/session"
+}

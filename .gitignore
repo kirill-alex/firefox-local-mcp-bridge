@@ -1,0 +1,15 @@
+node_modules/
+config.json
+config.*.json
+!.config.example.json
+extension/config.js
+.local/
+dist/
+*.log
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store
+Thumbs.db
