@@ -1,0 +1,12 @@
+import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
+import {join} from 'node:path';
+import {root} from './public-files.mjs';
+import {checkPublic} from './check-public.mjs';
+import {zip} from './zip.mjs';
+checkPublic();
+const files=['manifest.json','background.js','page.js','popup.html','popup.js','options.html','options.js'];
+const version=JSON.parse(readFileSync(join(root,'package.json'))).version;
+mkdirSync(join(root,'dist'),{recursive:true});
+const output=join(root,'dist',`firefox-bridge-${version}-unsigned.zip`);
+writeFileSync(output,zip(files.map(name=>({name,data:readFileSync(join(root,'extension',name))}))));
+console.log('Unsigned extension archive: '+output);

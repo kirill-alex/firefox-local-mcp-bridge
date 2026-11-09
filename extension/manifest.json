@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+  "name": "Codex Firefox Bridge",
+  "version": "0.1.0",
+  "description": "Управление вкладками Firefox через локальный MCP: страницы, формы, навигация и скриншоты.",
+  "browser_specific_settings": {"gecko": {"id": "codex-reader@local.invalid", "strict_min_version": "109.0"}},
+  "permissions": ["tabs", "storage", "webNavigation", "downloads", "<all_urls>"],
+  "background": {"scripts": ["background.js"], "persistent": true},
+  "options_ui": {"page": "options.html", "open_in_tab": true},
+  "browser_action": {"default_title": "Codex Firefox Bridge", "default_popup": "popup.html"},
+  "incognito": "not_allowed",
+  "content_security_policy": "script-src 'self'; object-src 'none'; connect-src http://127.0.0.1:17893"
+}
